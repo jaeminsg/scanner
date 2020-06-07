@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Images</title>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 1200px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+
+  <script type="text/javascript" src="../dist/vis.js"></script>
+  <link href="../dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+  <script type="text/javascript">
+    var nodes = null;
+    var edges = null;
+    var network = null;
+
+    var DIR = '../img/';
+    var EDGE_LENGTH_MAIN = 200;
+    var EDGE_LENGTH_SUB = 100;
+
+    // Called when the Visualization API is loaded.
+    function draw() {
+      // Create a data table with nodes.
+      nodes = [];
+
+      // Create a data table with links.
+      edges = [];
+      nodes.push({id: 0, label: 'intranet', image: DIR + 'internet.png', size: 15, shape: 'image' });
+      nodes.push({id: 1001, label: '192.168.0.1\r\nGateway\r\n(Public: 211.221.184.224)\r\nEFM Networks', image: DIR + 'homeRouter.png', size: 15, shape: 'image' });
+      nodes.push({id: 1004, label: '192.168.0.10\r\nLG (Mobile)', image: DIR + 'mobile.png', size: 15, shape: 'image' });
+      nodes.push({id: 1005, label: '192.168.0.101\r\nunknown', image: DIR + 'pc.png', size: 15, shape: 'image' });
+      nodes.push({id: 1006, label: '192.168.0.111\r\n', image: DIR + 'pc.png', size: 15, shape: 'image' });
+      nodes.push({id: 1007, label: '192.168.0.13\r\nunknown', image: DIR + 'pc.png', size: 15, shape: 'image' });
+      nodes.push({id: 1003, label: '192.168.0.5\r\nMy PC', image: DIR + 'pc.png', size: 15, shape: 'image' });
+      nodes.push({id: 1008, label: '192.168.0.8\r\nLG (Mobile)', image: DIR + 'mobile.png', size: 15, shape: 'image' });
+      nodes.push({id: 3001, label: '192.168.50.1', image: DIR + 'router.png', size: 15, shape: 'image' });
+      nodes.push({id: 3101, label: '192.168.33.254', image: DIR + 'router.png', size: 15, shape: 'image' });
+      nodes.push({id: 3201, label: '192.168.56.254', image: DIR + 'router.png', size: 15, shape: 'image' });
+      nodes.push({id: 3301, label: '192.168.159.1', image: DIR + 'router.png', size: 15, shape: 'image' });
+      edges.push({from: 0, to: 1001, length: EDGE_LENGTH_MAIN });
+      edges.push({from: 1003, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 1004, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 1005, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 1006, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 1007, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 1008, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 3001, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 3101, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 3201, to: 1001, length: EDGE_LENGTH_SUB });
+      edges.push({from: 3301, to: 1001, length: EDGE_LENGTH_SUB });
+
+
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {layout: { randomSeed: 100}, nodes: { size: 20}};
+      network = new vis.Network(container, data, options);
+    }
+  </script>
+
+
+<body onload="draw()">
+
+<p>
+  Display nodes as images.
+</p>
+<div id="mynetwork"></div>
+
+</body>
+</html>

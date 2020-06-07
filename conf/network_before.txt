@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Images</title>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 1200px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+
+  <script type="text/javascript" src="../dist/vis.js"></script>
+  <link href="../dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+  <script type="text/javascript">
+    var nodes = null;
+    var edges = null;
+    var network = null;
+
+    var DIR = '../img/';
+    var EDGE_LENGTH_MAIN = 200;
+    var EDGE_LENGTH_SUB = 100;
+
+    // Called when the Visualization API is loaded.
+    function draw() {
+      // Create a data table with nodes.
+      nodes = [];
+
+      // Create a data table with links.
+      edges = [];

@@ -1,0 +1,19 @@
+My IP :	192.168.0.5	AC-ED-5C-F1-39-43	Intel	
+GW IP :	192.168.0.1		
+PubIP :	211.221.184.224		
+Pub ttl :	64		
+GW ttl :	64		
+discoverIP :	192.168.0.1	88:36:6C:6A:96:AC	EFM Networks
+discoverIP :	192.168.0.10	10:F1:F2:0C:ED:C3	LG (Mobile)
+discoverIP :	192.168.0.101	C2:25:E9:3A:45:E6	unknown
+discoverIP :	192.168.0.111		
+discoverIP :	192.168.0.13	C6:25:E9:35:07:D5	unknown
+discoverIP :	192.168.0.5		
+discoverIP :	192.168.0.8	64:C2:DE:78:34:26	LG (Mobile)
+OtherNet :	192.168.33.1		
+OtherNet :	192.168.50.1		
+OtherNet :	192.168.56.1		
+OtherNet :	192.168.33.254		
+OtherNet :	192.168.56.254		
+OtherNet :	192.168.159.1		
+OtherNet :	10.10.10.254		
